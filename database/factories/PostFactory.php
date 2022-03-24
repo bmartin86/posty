@@ -13,6 +13,8 @@ class PostFactory extends Factory
      */
     public function definition()
     {
+        // tinker
+        // App\Models\Post::factory()->times(100)->create('user_id' => 4);
         return [
             'body' => $this->faker->sentence(20),
         ];
