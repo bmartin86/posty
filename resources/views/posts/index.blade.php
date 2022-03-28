@@ -36,15 +36,19 @@
 
                         <p class="mb-2">{{ $post->body }}</p>
 
-                        @if ($post->ownedBy(auth()->user()))
-                        <div>
+                        {{-- uz funkciju ownedBy--}}
+                        {{-- @if ($post->ownedBy(auth()->user())) --}}
+                        
+                        {{-- uz PostPolicy --}}
+                        @can('delete', $post)
                             <form action="{{ route('posts.destroy', $post) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-blue-500">Delete</button>
                             </form>
-                        </div>
-                        @endif
+                        @endcan
+                            
+                        {{-- @endif --}}
 
                         <div class="flex items-center">
                             @auth

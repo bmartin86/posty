@@ -20,10 +20,13 @@ class Post extends Model
         return $this->likes->contains('user_id', $user->id); // Collection metoda
     }
 
+    /*
+    // funkcija prebačena na PostPolicy
     public function ownedBy(User $user)
     {
         return $user->id === $this->user_id;
     }
+    */
 
     public function user()
     {

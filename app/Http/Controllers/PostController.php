@@ -46,9 +46,16 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
+        /*
+        // uz funkciju ownedBy u Post modelu
         if (!$post->ownedBy(auth()->user())) {
             dd('no');
         }
+        */
+
+        // uz PostPolicy
+        $this->authorize('delete', $post);
+
         $post->delete();
 
         return back();
