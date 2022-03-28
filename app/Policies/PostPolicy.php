@@ -10,7 +10,7 @@ class PostPolicy
 {
     use HandlesAuthorization;
 
-    public function delete(User $user, Post $post)
+    public function postDelete(User $user, Post $post)
     {
         return $user->id === $post->user_id;
     }

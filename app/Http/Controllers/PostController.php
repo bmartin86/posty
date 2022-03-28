@@ -54,7 +54,7 @@ class PostController extends Controller
         */
 
         // uz PostPolicy
-        $this->authorize('delete', $post);
+        $this->authorize('postDelete', $post);
 
         $post->delete();
 

@@ -22,6 +22,7 @@ class Post extends Model
 
     /*
     // funkcija prebačena na PostPolicy
+    
     public function ownedBy(User $user)
     {
         return $user->id === $this->user_id;

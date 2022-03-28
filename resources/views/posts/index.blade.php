@@ -40,7 +40,7 @@
                         {{-- @if ($post->ownedBy(auth()->user())) --}}
                         
                         {{-- uz PostPolicy --}}
-                        @can('delete', $post)
+                        @can('postDelete', $post)
                             <form action="{{ route('posts.destroy', $post) }}" method="post">
                                 @csrf
                                 @method('DELETE')
